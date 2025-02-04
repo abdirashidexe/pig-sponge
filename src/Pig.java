@@ -37,7 +37,6 @@ public class Pig {
             newSentence += " ";
         }
 
-
         return newSentence.substring(0, newSentence.length()-1);
     }
 
