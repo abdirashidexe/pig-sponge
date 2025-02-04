@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Pig {
 
     /*
@@ -31,22 +28,6 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        List<String> wordsInSentence = new ArrayList<String>();
-
-        if (sentence.contains(" "))
-        {
-            for (int k = 0; k < sentence.length(); k++)
-            {
-                if (sentence.charAt(k) == ' ')
-                {
-                    return "space location found"; // I want to take the entire word before the space and put it in an ArrayList
-                                                   // I could use sentence.charAt(0) to charAt(k) but what about the 2nd word? I cant use charAt(0)
-                                                   // because loop is still going
-                }
-            }
-            return "contains space";
-        }
-
         for (int i = 0; i < sentence.length(); i++)
         {
             if (sentence.charAt(0) == 'a' || sentence.charAt(0) == 'e' || sentence.charAt(0) == 'i' || sentence.charAt(0) == 'o' || sentence.charAt(0) == 'u')
@@ -58,6 +39,21 @@ public class Pig {
             sentence = sentence.substring(1); //                      omethingsay
             return sentence;
         }
+
+        String[] words = sentence.split(" ");
+        String newSentence = "";
+
+        for (String word : words)
+        {
+            for (int k = 0; k < word.length(); k++)
+            {
+                if (word.charAt(0) != 'a' || word.charAt(0) != 'e' || word.charAt(0) != 'i' || word.charAt(0) != 'o' || word.charAt(0) != 'u')
+                {
+                    return word;
+                }
+            }
+        }
+        
         return sentence;
     }
 
