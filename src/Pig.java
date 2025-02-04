@@ -33,10 +33,8 @@ public class Pig {
 
         for (String word : words)
         {
-            char firstLetter = word.charAt(0);
-            word = word.substring(1);
-            word = word + firstLetter;
-            newSentence += word +  " ";
+            newSentence += pigLatinSingleWord(word);
+            newSentence += " ";
         }
         
         for (int i = 0; i < sentence.length(); i++)
@@ -51,7 +49,7 @@ public class Pig {
             return sentence;
         }
 
-        return "lol";
+        return newSentence;
     }
 
     private static String pigLatinSingleWord(String word) {
