@@ -26,15 +26,18 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        // if ("a", "e"), then return sentence;
         for (int i = 0; i < sentence.length(); i++)
         {
             if (sentence.charAt(0) == 'a' || sentence.charAt(0) == 'e' || sentence.charAt(0) == 'i' || sentence.charAt(0) == 'o' || sentence.charAt(0) == 'u')
             {
                 return sentence;
             }
+
+            sentence += sentence.charAt(0) + "ay"; // something + s + ay = somethingsay
+            sentence = sentence.substring(1); //                      omethingsay
+            return sentence;
         }
-        return null;
+        return sentence;
     }
 
 
