@@ -36,20 +36,9 @@ public class Pig {
             newSentence += pigLatinSingleWord(word);
             newSentence += " ";
         }
-        
-        for (int i = 0; i < sentence.length(); i++)
-        {
-            if (sentence.charAt(0) == 'a' || sentence.charAt(0) == 'e' || sentence.charAt(0) == 'i' || sentence.charAt(0) == 'o' || sentence.charAt(0) == 'u')
-            {
-                return sentence;
-            }
 
-            sentence += sentence.charAt(0) + "ay"; // something + s + ay = somethingsay
-            sentence = sentence.substring(1); //                      omethingsay
-            return sentence;
-        }
 
-        return newSentence;
+        return newSentence.substring(0, newSentence.length()-1);
     }
 
     private static String pigLatinSingleWord(String word) {
